@@ -1,6 +1,7 @@
 # ======================== Import Required Libraries ========================
 import streamlit as st
 import pandas as pd
+import os
 
 # Custom functions for loading, cleaning, and visualizing the data
 from scripts.data_loader import load_data
