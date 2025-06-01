@@ -25,7 +25,10 @@ The analysis focuses on handling missing values, duplicates, and outliers to ens
 # Cache the raw CSV load to avoid reloading on every rerun
 @st.cache_data
 def load_raw_data():
-    return pd.read_csv("../data/raw/WHO_PM25_urban_2022.csv")
+    base_path = os.path.dirname(__file__)  # gets the path to the current script
+    filepath = os.path.join(base_path, '..', 'data', 'raw', 'WHO_PM25_urban_2022.csv')
+    df = pd.read_csv(filepath)
+    return df
 
 df = load_raw_data()
 
